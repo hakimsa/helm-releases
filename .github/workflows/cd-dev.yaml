@@ -3,6 +3,9 @@ name: CD-DEV
 on:
   repository_dispatch:
     types: [deploy-dev]
+  push:                    # ← añade esto para pruebas
+    branches:
+      - develop    
     
 
 jobs:
