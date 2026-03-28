@@ -3,14 +3,12 @@ name: CD-DEV
 on:
   repository_dispatch:
     types: [deploy-dev]
-
-  push:                    # ← añade esto para pruebas
-    branches:
-      - develop  
+    
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: dev 
 
     steps:
       - name: Checkout Helm repo
