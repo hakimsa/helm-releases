@@ -15,20 +15,20 @@ jobs:
 
     steps:
       - name: Checkout Helm repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set Kubeconfig
         run: |
-             mkdir -p ~/.kube
-              cat > ~/.kube/config << 'KUBEEOF'
-              ${{ secrets.KUBECONFIG }}
-                 KUBEEOF
-      - name: Deploy with Helm
-        run: |
+         mkdir -p ~/.kube
+         printf '%s' "${{ secrets.KUBECONFIG }}" > ~/.kube/config
 
-            helm upgrade --install backend-mgt-app ./backend-mgt-app \
-            --namespace dev \
-            --create-namespace \
-            -f backend-mgt-app/values-dev.yaml \
-            --set image.tag=${{ github.event.client_payload.image }} \
-            --set datasource.password=${{ secrets.DB_PASSWORD }}
+      - name: Deploy with Helm
+        env:
+           KUBECONFIG: /home/hakim/.kube/config
+        run: |
+           helm upgrade --install backend-mgt-app . \
+           --namespace dev \
+           --create-namespace \
+            -f values.yaml \
+           --set image.tag=${{ github.event.client_payload.image }} \
+           --set secret.dbPassword=${{ secrets.DB_PASSWORD }}

@@ -18,4 +18,5 @@ config:
 secret:
   dbUrl: jdbc:mysql://mysql:3306/dbs
   dbUser: "root"        # viene de GitHub Secret
-  dbPassword: ""    # viene de GitHub Secret
+  dbPassword: "HSrd82AB**"    # viene de GitHub Secret
+  securityPassword: "HSrd82AB**" # viene de GitHub Secret
