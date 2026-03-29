@@ -20,7 +20,7 @@ jobs:
       - name: Set Kubeconfig
         run: |
           echo "${{ secrets.KUBE_CONFIG }}" > kubeconfig
-          export KUBECONFIG=kubeconfig
+          export KUBE_CONFIG=kubeconfig
       - name: Deploy with Helm
         run: |
 
