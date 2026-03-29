@@ -23,20 +23,6 @@ jobs:
         
           echo "${{ secrets.KUBECONFIG }}" > ~/.kube/config
 
-
-
-      - name: Debug kubeconfig
-        run: |
-         echo "=== SERVER ==="
-         grep server ~/.kube/config
-         echo "=== CONNECTIVITY ==="
-         curl -k https://192.168.49.2:8443/version
-         echo "=== KUBECTL ==="
-         kubectl cluster-info     
-          
-
-
-          
       - name: Deploy with Helm
         run: |
 
