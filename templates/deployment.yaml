@@ -29,7 +29,7 @@ spec:
                 secretKeyRef:
                   name: "{{ .Release.Name }}-secret"
                   key: db-url
-            - name: DB_USER
+            - name: DB_USERNAME
               valueFrom:
                 secretKeyRef:
                   name: "{{ .Release.Name }}-secret"
