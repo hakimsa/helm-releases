@@ -1,0 +1,32 @@
+image:
+  repository: hakimsamouh/backend-app
+  tag: dev
+  pullPolicy: Always
+
+replicaCount: 1
+
+service:
+  type: ClusterIP
+  port: 8080
+
+config:
+  applicationProperties: |
+    server.port=8080
+    spring.jpa.hibernate.ddl-auto=update
+    spring.jpa.show-sql=true
+
+    spring.datasource.url=${DB_URL}
+    spring.datasource.username=${DB_USERNAME}
+    spring.datasource.password=${DB_PASSWORD}
+    spring.jpa.show-sql=true
+    spring.jpa.hibernate.ddl-auto=update
+    spring-jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+    spring.jpa.properties.hibernate.format_sql=true
+    spring.batch.job.enabled=true
+
+
+secret:
+  dbUrl: jdbc:mysql://192.168.0.19:3306/dbs
+  dbUser: "root"        # viene de GitHub Secret
+  dbPassword: "HSrd82AB**"    # viene de GitHub Secret
+  securityPassword: "HSrd82AB**" # viene de GitHub Secret

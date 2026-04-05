@@ -4,4 +4,12 @@ metadata:
   name: {{ .Release.Name }}-config
 data:
   application.properties: |
-    server.port=8086
+    server.port=8080
+    spring.datasource.url=${DB_URL}
+    spring.datasource.username=${DB_USERNAME}
+    spring.datasource.password=${DB_PASSWORD}
+    spring.jpa.show-sql=${DB_SHOW_SQL}
+    spring.jpa.hibernate.ddl-auto=update
+    spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+    spring.jpa.properties.hibernate.format_sql=true
+    spring.batch.job.enabled=true
