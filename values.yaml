@@ -1,5 +1,5 @@
 image:
-  repository: hakimsamouh/backend-app
+  repository: hakimsamouh/backend-mgt
   tag: dev
   pullPolicy: Always
 
