@@ -1,6 +1,6 @@
 # helm/backend-mgt-app/Chart.yaml
 apiVersion: v2
-name: backend-app-dev
+name: backend-app-preproduction
 description: Backend Management Users Application
 type: application
 version: 0.2.0
