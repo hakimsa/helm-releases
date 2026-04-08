@@ -5,3 +5,7 @@ metadata:
 data:
   application.properties: |
     server.port=8086
+    spring.jpa.hibernate.ddl-auto=update
+    spring.datasource.url=${DB_URL}
+    spring.datasource.username=${DB_USER}
+    spring.datasource.password=${DB_PASSWORD}
