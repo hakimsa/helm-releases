@@ -16,6 +16,6 @@ config:
     spring.jpa.show-sql=true
 
 secret:
-  dbUrl: jdbc:mysql://172.26.0.2:3306/dbs
+  dbUrl: jdbc:mysql://192.168.0.19:3306/dbs
   dbUser: "root"        # viene de GitHub Secret
   dbPassword: ""    # viene de GitHub Secret
